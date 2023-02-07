@@ -1,0 +1,90 @@
+<head>
+  <title>Aidan Goguen</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+</head>
+<body>
+  <nav class="navbar" style="background-color:rgba(2, 8, 65, 1);">
+    <div class="container d-flex justify-content-between">
+      <a href="/" class="navbar-brand d-flex align-items-center" style="color:white;">
+        <strong>Home</strong>
+      </a>
+    </div>
+  </nav>
+  <br/>
+  <div class="jumbotron text-center">
+    <h1 class="display-4"><%= @proj_by_id.proj_name %></h1><br/>
+  </div>
+  <div id="pictureCarousel" class="carousel slide bg-light">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="<%=@proj_by_id.proj_picture_1%>" class="d-block w-100"/>
+      </div>
+      <% get_carousel_images(@proj_by_id).each do |image| %>
+        <div class="carousel-item">
+          <img src="<%=image%>" class="d-block w-100" alt="Project Picture"> <!--class="d-block w-80"-->
+        </div>
+      <%end%>
+      <div class="carousel-buttons">
+        <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="under-carousel">
+      <div class="row">
+        <a class="navbar-brand" href="<%=@proj_by_id.github_link%>" target="_blank">
+          <p>Checkout this project on Github</p>
+          <img src="https://cs1.membeesites.net/wp-content/uploads/github-sign.png" target="_blank" alt="Github Link" width="50" height="44" >
+        </a>
+      </div><br/>
+        <div class="row">
+          <p class="lead text-muted"><%= @proj_by_id.proj_long_desc %></p><br/>
+          <div class="social-buttons">
+            <p>Connect with me!</p>
+            <a class="navbar-brand" href="https://www.linkedin.com/in/aidan-goguen/" target="_blank">
+              <img src="https://cs1.membeesites.net/wp-content/uploads/linkedin.png" alt="LinkedIn icon" width="50" height="44">
+            </a>
+            <a class="navbar-brand" href="https://github.com/GogAidan" target="_blank">
+              <img src="https://cs1.membeesites.net/wp-content/uploads/github-sign.png" alt="GitHub icon" width="50" height="44"><!--Original: H:30, W:24-->
+            </a>
+            <a class="navbar-brand" href="mailto:aidangoguen@outlook.com">
+              <img src="https://cs1.membeesites.net/wp-content/uploads/email.png" alt="Email Icons" width="50" height="44">
+            </a>
+        </div>
+        </div>
+      </div><br/>
+    </div>
+  </div>
+<footer class="text-muted" style="background-color:rgba(2, 8, 65, 1);">
+  <div class="container">
+    <p style="text-align:center;">
+      <a href="#">Back to top</a>
+    </p>
+    <div style="color:white; text-align:left;">
+      <h6>Icons:</h6>
+      <p>
+      Github: <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Dave Gandy - Flaticon</a>
+      </p>
+      <p>
+      Email: <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik - Flaticon</a>
+      </p>
+    </div>
+    <%# <p>
+      LinkedIn:
+      <a class="navbar-brand" href="#">
+        <img src="https://cs1.membeesites.net/wp-content/uploads/linkedin.png" alt="LinkedIn" width="30" height="24">
+      </a>
+    </p> %>
+  </div>
+</footer>
+</body>
+</html>
