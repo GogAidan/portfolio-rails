@@ -7,7 +7,13 @@ ruby "3.1.3"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 #Sass
-gem 'sass-rails'
+gem "sass-rails"
+
+#aws-sdk-rails
+gem 'aws-sdk-rails', '~> 3'
+
+#aws-sdk-s3 for S3 bucket
+gem 'aws-sdk-s3', '~> 1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
